@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Natural Vitality Blend™</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Georgia", serif;
+            background: url('texture.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #3F5E4F;
+            line-height: 1.7;
+        }
+
+        /* HERO SECTION */
+        header {
+            background: url('hero.jpg') center/cover no-repeat;
+            padding: 140px 20px;
+            text-align: center;
+            border-bottom: 4px solid #C9A27C;
+            color: #2F4F3A;
+            position: relative;
+        }
+
+        /* Soft overlay behind hero text */
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(2px);
+            z-index: 0;
+        }
+        header * {
+            position: relative;
+            z-index: 1;
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 20px;
+            max-width: 650px;
+            margin: auto;
+        }
+        .button {
+            background: #5A4634;
+            color: white;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 10px;
+            margin-top: 30px;
+            cursor: pointer;
+            font-size: 18px;
+            font-family: "Georgia", serif;
+            transition: 0.3s ease;
+        }
+        .button:hover {
+            background: #3F5E4F;
+        }
+
+        /* SECTIONS */
+        section {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background: rgba(255,255,255,0.92);
+            border-radius: 14px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            position: relative;
+        }
+
+        /* Scroll-triggered fade-in */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* BOTANICAL CORNER DECOR */
+        .botanical {
+            position: absolute;
+            width: 120px;
+            opacity: 0.15;
+        }
+        .top-left { top: -20px; left: -20px; }
+        .bottom-right { bottom: -20px; right: -20px; }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #5A4634;
+            font-size: 32px;
+        }
+
+        /* INGREDIENT CARDS */
+        .ingredient-card {
+            background: #F4EFE7;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+            border-left: 5px solid #C9A27C;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Ingredient icons */
+        .ingredient-card img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            margin-right: 15px;
+            border-radius: 6px;
+        }
+
+        /* TESTIMONIALS */
+        .testimonial {
+            background: #F4EFE7;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+            font-style: italic;
+            border-left: 5px solid #A7B8A8;
+        }
+
+        /* BALANCE CHECK */
+        select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #A7B8A8;
+            margin-bottom: 20px;
+            background: #FFFFFF;
+        }
+
+        /* AI RESPONSE */
+        #ai-response {
+            background: #EDE7DD;
+            border-left: 5px solid #C9A27C;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            margin-top: 60px;
+            color: #5A4634;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Find Your Natural Balance, One Simple Routine at a Time</h1>
+
+    <p>Natural Vitality Blend™ is a gentle daily supplement designed to support calm, focus, and overall well‑being. No hype. No medical claims. Just a simple routine that helps you feel more grounded.</p>
+
+    <button class="button" onclick="showBalanceCheck()">Start Your Balance Check</button>
+</header>
+
+<section class="fade-in">
+    <img src="botanical1.png" class="botanical top-left">
+    <img src="botanical2.png" class="botanical bottom-right">
+
+    <h2>About the Product</h2>
+
+    <p>Life gets busy. Stress builds up. Routines fall apart. Natural Vitality Blend™ was created to help you reconnect with a sense of balance through small, steady habits. Our formula is made with familiar, plant‑based ingredients and paired with a lightweight AI assistant that helps you build a routine that feels right for you.</p>
+</section>
+
+<section class="fade-in">
+    <h2>What Makes It Different</h2>
+
+    <p>Natural Vitality Blend™ focuses on clarity, honesty, and simplicity. We don’t promise miracles. We don’t make medical claims. We simply offer a routine that supports your day in a natural, approachable way.</p>
+</section>
+
+<section class="fade-in">
+    <h2>How It Works</h2>
+
+    <ol>
+        <li>Take the quick 3‑question balance check</li>
+        <li>Get simple, personalized routine suggestions</li>
+        <li>Build a daily habit that feels sustainable</li>
+    </ol>
+</section>
+
+<section class="fade-in">
+    <h2>Transparency First</h2>
+
+    <p>We believe wellness should feel safe and straightforward. That’s why we use clear language, gentle suggestions, and visible disclaimers. You stay in control of your routine at every step.</p>
+</section>
+
+<section class="fade-in">
+    <h2>Ingredients</h2>
+
+    <div class="ingredient-card">
+        <img src="ashwagandha.jpg">
+        <div>
+            <strong>Ashwagandha</strong><br>
+            Often used to support calm and help manage everyday stress.
+        </div>
+    </div>
+
+    <div class="ingredient-card">
+        <img src="rhodiolaflower.jpg">
+        <div>
+            <strong>Rhodiola</strong><br>
+            Traditionally used to support focus and steady energy.
+        </div>
+    </div>
+
+    <div class="ingredient-card">
+        <img src="ginseng.jpg">
+        <div>
+            <strong>Panax Ginseng</strong><br>
+            Commonly associated with clarity and overall vitality.
+        </div>
+    </div>
+</section>
+
+<section class="fade-in">
+    <h2>Testimonials</h2>
+
+    <div class="testimonial">“I didn’t want anything complicated. Natural Vitality Blend™ helped me build a simple morning routine that actually sticks. I feel more grounded throughout the day.” — Maya, 32</div>
+
+    <div class="testimonial">“I like that the suggestions are gentle and not pushy. The balance check made me think about my habits in a new way.” — Jordan, 41</div>
+
+    <div class="testimonial">“The whole experience feels calm and straightforward. It’s refreshing to see a wellness product that doesn’t overpromise.” — Elena, 27</div>
+</section>
+
+<section id="balance-check" class="fade-in" style="display:none;">
+    <h2>Your Balance Check</h2>
+
+    <label>How have you been feeling overall this week — more balanced, somewhat off‑balance, or pretty overwhelmed?</label>
+    <select id="q1">
+        <option>More balanced</option>
+        <option>Somewhat off-balance</option>
+        <option>Pretty overwhelmed</option>
+    </select>
+
+    <label>What part of your daily routine feels the most out of sync right now — mornings, afternoons, or evenings?</label>
+    <select id="q2">
+        <option>Mornings</option>
+        <option>Afternoons</option>
+        <option>Evenings</option>
+    </select>
+
+    <label>What would you like more of in your day — calm, focus, or steady energy?</label>
+    <select id="q3">
+        <option>Calm</option>
+        <option>Focus</option>
+        <option>Steady energy</option>
+    </select>
+
+    <button class="button" onclick="showAISuggestions()">See My Suggestions</button>
+</section>
+
+<section id="ai-response" class="fade-in" style="display:none;">
+    <h2>Your Suggestions</h2>
+    <p id="response-text"></p>
+    <p style="font-size: 12px; color: #777;">These suggestions are general lifestyle ideas and not medical advice.</p>
+</section>
+
+<footer>
+    © 2026 Natural Vitality Blend™ — General wellness product only.
+</footer>
+
+<script>
+/* Scroll-triggered fade-in */
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+});
+
+document.querySelectorAll('.fade-in').forEach(section => {
+    observer.observe(section);
+});
+
+/* Balance check logic */
+function showBalanceCheck() {
+    document.getElementById("balance-check").style.display = "block";
+    window.scrollTo(0, document.getElementById("balance-check").offsetTop);
+}
+
+function showAISuggestions() {
+    const q1 = document.getElementById("q1").value;
+    const q2 = document.getElementById("q2").value;
+    const q3 = document.getElementById("q3").value;
+
+    let suggestion = "";
+
+    if (q1 === "Pretty overwhelmed") {
+        suggestion += "It sounds like your days have been feeling pretty heavy. Some people find it helpful to build a small grounding moment into their morning, like a slow stretch or a quiet minute before checking their phone. ";
+    }
+
+    if (q2 === "Afternoons") {
+        suggestion += "Afternoons can be tough, especially when energy dips. You might try a short walk or a few minutes of deep breathing to reset. ";
+    }
+
+    if (q3 === "Calm") {
+        suggestion += "Creating calm often starts with small habits. You could try setting aside a few minutes in the evening to unwind, maybe with a warm drink or a simple journaling moment. ";
+    }
+
+    if (q3 === "Focus") {
+        suggestion += "Focus tends to build when routines feel steady. You might consider choosing one small task to start your day with intention. ";
+    }
+
+    if (q3 === "Steady energy") {
+        suggestion += "Steady energy often comes from pacing your day. You might try adding a short break between tasks or stepping outside for a moment of fresh air. ";
+    }
+
+    document.getElementById("response-text").innerText = suggestion;
+    document.getElementById("ai-response").style.display = "block";
+    window.scrollTo(0, document.getElementById("ai-response").offsetTop);
+}
+</script>
+
+</body>
+</html>
